@@ -10,7 +10,7 @@ void main() {
 //dessa forma isso não funciona
   //var nomesInternosNaoAceitaNulos = <String>[null];
 
-  //lista não pode ser nula, ams items pode
+  //lista não pode ser nula, mas os items pode
   var nomesInternosAceitaNulos = <String?>[
     null,
     "Carlos"
