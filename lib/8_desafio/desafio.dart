@@ -13,6 +13,11 @@ void main() {
     'João Rahman|55|jornalista|SP',
   ];
 
+  //! Baseado no array acima monte um relatório onde:
+  //! 1 - Apresente os pacientes com mais de 20 anos e print o nome deles
+  //! 2 - Apresente quantos pacientes existem para cada profissão (desenvolvedor, estudante, dentista, jornalista)
+  //! 3 - Apresente a quantidade de pacientes que moram em SP
+
   contPacientesMaior20(List pacientes) {
     List<String> listaNomeMaior20 = [];
     for (var i = 0; i < pacientes.length; i++) {
@@ -87,10 +92,6 @@ void main() {
     }
   }
 
-  //! Baseado no array acima monte um relatório onde:
-  //! 1 - Apresente os pacientes com mais de 20 anos e print o nome deles
-  //! 2 - Apresente quantos pacientes existem para cada profissão (desenvolvedor, estudante, dentista, jornalista)
-  //! 3 - Apresente a quantidade de pacientes que moram em SP
   int escolha = 3;
 
   switch (escolha) {
