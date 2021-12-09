@@ -18,15 +18,13 @@ void main() {
     for (var i = 0; i < pacientes.length; i++) {
       var dados = pacientes[i].split("|");
 
-      var idade = int.parse(dados[1]);
+      var idade = int.tryParse(dados[1]) ?? 0;
       if (idade > 20) {
         listaNomeMaior20.add(dados[0]);
       }
     }
     print("Pacientes com mais de 20 anos");
-    for (var nomes in listaNomeMaior20) {
-      print(nomes);
-    }
+    listaNomeMaior20.forEach(print);
   }
 
   contprofissao(List paciente) {
@@ -53,22 +51,17 @@ void main() {
           break;
       }
     }
+
     print("--------Desenvolvedores--------");
-    for (var dev in desenvolvedor) {
-      print(dev);
-    }
+    //desenvolvedor.forEach((nome) => print(nome));
+    desenvolvedor.forEach(print);
+
     print("--------Estudantes--------");
-    for (var aluno in estudante) {
-      print(aluno);
-    }
+    estudante.forEach(print);
     print("--------Dentistas--------");
-    for (var medico in dentista) {
-      print(medico);
-    }
+    dentista.forEach(print);
     print("--------Jornalistas--------");
-    for (var fofoqueiro in jornalista) {
-      print(fofoqueiro);
-    }
+    jornalista.forEach(print);
   }
 
   contSp(List pacientes) {
@@ -82,16 +75,14 @@ void main() {
     }
 
     print("Pessoas que moram em São Paulo");
-    for (var pesssoas in listaPessoasSp) {
-      print(pesssoas);
-    }
+    listaPessoasSp.forEach(print);
   }
 
   //! Baseado no array acima monte um relatório onde:
   //! 1 - Apresente os pacientes com mais de 20 anos e print o nome deles
   //! 2 - Apresente quantos pacientes existem para cada profissão (desenvolvedor, estudante, dentista, jornalista)
   //! 3 - Apresente a quantidade de pacientes que moram em SP
-  int escolha = 3;
+  int escolha = 1;
 
   switch (escolha) {
     case 1:
