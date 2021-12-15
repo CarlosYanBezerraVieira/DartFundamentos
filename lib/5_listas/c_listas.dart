@@ -1,5 +1,3 @@
-import 'package:dart_fundamentos/1_variaveis/b_nullsafety.dart';
-
 void main() {
   final numeros = [1, 2, 3];
   numeros.add(4);
@@ -15,9 +13,11 @@ void main() {
   nomes.insert(0, "Yan");
   print(nomes);
 
+  print(" numeros.remove(1);");
   numeros.remove(1);
   print(numeros);
-  numeros.removeWhere((numeros) => numeros == 2);
+  print(" numeros.removeWhere");
+  numeros.removeWhere((numeros) => numeros % 2 == 0);
   print(numeros);
 
   nomes.removeWhere((nome) {
@@ -40,12 +40,13 @@ void main() {
   var primeiroNome = nomes.firstWhere((nome) {
     print(nome);
 
-    if (nome == "kelvin") {
+    if (nome.startsWith("A")) {
       return true;
     } else {
       return false;
     }
   });
+  print(" print(primeiroNome);");
   print(primeiroNome);
 
   final numerosGerados = List.generate(10, (index) => index + 1);
@@ -55,7 +56,7 @@ void main() {
   final repeticoes = List.filled(10, "Nada");
   print(repeticoes);
 
-  print("soma de itens de matrizes");
+  print("soma de itens");
   final numerosGeradosParaCalculo = List.generate(100, (index) => index + 1);
   var soma = numerosGeradosParaCalculo.fold<int>(
       0, (previousValue, numero) => previousValue = previousValue + numero);
